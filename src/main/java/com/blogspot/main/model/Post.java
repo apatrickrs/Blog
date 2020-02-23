@@ -33,12 +33,19 @@ public class Post {
 	@Lob
 	private String text;
 
-	public Long getId() {
-		return id;
+	public Post() {
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Post(@NotBlank String title, @NotBlank String autor, LocalDate date, @NotBlank String text) {
+		super();
+		this.title = title;
+		this.autor = autor;
+		this.date = date;
+		this.text = text;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getTitle() {
