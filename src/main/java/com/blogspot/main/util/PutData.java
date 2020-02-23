@@ -3,8 +3,6 @@ package com.blogspot.main.util;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +15,7 @@ public class PutData {
 	@Autowired
 	private BlogRepository blogRepository;
 
-	@PostConstruct
+	// @PostConstruct (Impede de criar varios posts cada vez que roda o server.)
 	public void savePosts() {
 
 		blogRepository.deleteAll();
