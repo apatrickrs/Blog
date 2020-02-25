@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.blogspot.main.model.Post;
@@ -17,11 +17,19 @@ public class BlogController {
 	@Autowired
 	private PostService postService;
 
-	@RequestMapping(value = "/posts", method = RequestMethod.GET)
+	@GetMapping(value = "/posts")
 	public ModelAndView getPosts() {
 		ModelAndView mv = new ModelAndView("posts");
 		List<Post> posts = postService.findAll();
 		mv.addObject("posts", posts);
+		return mv;
+	}
+
+	@GetMapping(value = "/posts/{id}")
+	public ModelAndView getPostsDetails(@PathVariable("id") Long id) {
+		ModelAndView mv = new ModelAndView("postDetails");
+		Post post = postService.findById(id);
+		mv.addObject("post", post);
 		return mv;
 	}
 }
