@@ -25,10 +25,11 @@
 					<li class="breadcrumb-item active" aria-current="page">Posts ...</li>
 				</ol>
 			</nav>
-
+						
+							<!-- CARD TEXT -->
 			<div class="card" th:each="post : ${posts}">
 				<div class="card-header">
-					<h4> <span th:text= "${post.title}"></span> </h4>
+					<a th:href="${(#mvc.url('BC#getPostsDetails').arg(0, post.id)).build()}"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px"> <span th:text= "${post.title}"></span> </h4></a>
 					<span th:text= "${post.date}"></span> 
 				</div>
 				<div class="card-body">
