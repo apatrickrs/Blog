@@ -32,4 +32,10 @@ public class BlogController {
 		mv.addObject("post", post);
 		return mv;
 	}
+
+	@GetMapping(value = "/newpost")
+	public String getPostsForm() {
+		return "postForm";
+	}
+
 }
