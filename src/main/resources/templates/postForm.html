@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+
+<title>BlogSpot</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
 </head>
 <body>
-	<h1> OLA </h1>
+	<header>
+		<nav class="navbar navbar-light bg-light">
+			<a class="navbar-brand" href="http://localhost:8080/posts">Criar Post</a>
+		</nav>
+	</header>
+
+	<section>
+		<div class="container" style="width: 60%; padding-bottom: 30px;">
+
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item" aria-current="page"><a href="http://localhost:8080/posts">Posts...</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Novo post</li>
+				</ol>
+			</nav>
+						
+							<!-- POST TEXT AREA -->
+			<div>
+				<form method="post">
+					<div class="form-group">
+						<input type="text" class="form-control" name="title" placeholder="Titulo *">						
+					</div>
+					
+					<div class="form-group">
+						<input type="text" class="form-control" name="autor" placeholder="Autor *">						
+					</div>
+					
+					 <textarea type="text" class="form-control" name="text" placeholder="Texto *"></textarea>
+					 
+					 <small class="form-text text-muted">(*) Campos obrigatorios</small>
+					 
+					 <button type="submit" class="btn btn-secondary" style="margin-top: 10px"> Publicar </button>
+					 <a href="http://localhost:8080/posts" class="btn btn-dark" role="button" style="margin-top: 10px">Cancelar</a>
+				</form>
+			</div>
+			
+		</div>
+	</section>
 </body>
 </html>
