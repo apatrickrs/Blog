@@ -15,7 +15,7 @@ public class PutData {
 	@Autowired
 	private BlogRepository blogRepository;
 
-	// @PostConstruct (Impede de criar varios posts cada vez que roda o server.)
+	// @PostConstruct
 	public void savePosts() {
 
 		blogRepository.deleteAll();
