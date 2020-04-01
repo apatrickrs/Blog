@@ -15,7 +15,7 @@ public class PutData {
 	@Autowired
 	private BlogRepository blogRepository;
 
-	// @PostConstruct
+	// @PostConstruct // Usado para criar os post iniciais na aplicação caso não tenha
 	public void savePosts() {
 
 		blogRepository.deleteAll();
